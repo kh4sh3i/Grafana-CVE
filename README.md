@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href=""><img src="/img/logo.png" alt="" width="300px;" height="100px"></a>
+  <a href=""><img src="/img/logo.png" alt="" width="300px;" height="200px"></a>
   <br>
   <img src="https://img.shields.io/badge/PRs-welcome-blue">
   <img src="https://img.shields.io/github/last-commit/kh4sh3i/Grafana-CVE"> 
