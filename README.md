@@ -9,10 +9,16 @@ Grafana is a multi-platform open source analytics and interactive visualization 
 ## CVE-2020-11110
 Grafana through 6.7.1 allows stored XSS due to insufficient input protection in the originalUrl field, which allows an attacker to inject JavaScript code that will be executed after clicking on Open Original Dashboard after visiting the snapshot.
 
+```
+https://target/api/snapshots
+```
+
+
+
 ## CVE-2021-43798
  Grafana versions 8.0.0-beta1 through 8.3.0 (except for patched versions) iss vulnerable to directory traversal, allowing access to local files. The vulnerable URL path is: `<grafana_host_url>/public/plugins//`, where is the plugin ID for any installed plugin.
 
- ```
+ ```url
 https://target/public/plugins/alertlist/../../../../../../../../../../../../../../../../../../../etc/passwd
  ```
 
